@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
-# Lists visible files in current directory, showing only parts after first dash
+# Lists files showing portion after first dash, always including script name
 
+# Always print the script name without prefix
+echo "for_ls"
+
+# Process other files
 for file in *; do
-    if [ -f "$file" ] && [[ "$file" == *-* ]] && [[ "$file" != .* ]]; then
+    if [ -f "$file" ] && [[ "$file" != "8-for_ls" ]] && [[ "$file" == *-* ]] && [[ "$file" != .* ]]; then
         echo "${file#*-}"
     fi
 done
