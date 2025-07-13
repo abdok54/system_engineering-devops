@@ -1,5 +1,2 @@
 #!/bin/bash
-# Split PATH into an array using ':' as delimiter
-IFS=':' read -ra path_dirs <<< "$PATH"
-# Count the number of elements in the array
-echo "${#path_dirs[@]}"
+echo "$PATH" | tr -s ':' '\n' | grep -c .
