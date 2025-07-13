@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-# This script lists files in current directory, showing only parts after first dash
+# Lists visible files in current directory, showing only parts after first dash
 
 for file in *; do
-    if [ -f "$file" ] && [[ "$file" != .* ]]; then
+    if [ -f "$file" ] && [[ "$file" == *-* ]] && [[ "$file" != .* ]]; then
         echo "${file#*-}"
     fi
 done
