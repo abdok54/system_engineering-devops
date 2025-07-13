@@ -1,8 +1,23 @@
 #!/usr/bin/env bash
-#  list current directory contents showing only text after the first dash, excluding hidden files
-for file in *; do
-  
-  [ -e "$file" ] || continue
+# Lists visible files, showing portion after first dash while always including script name
 
-  echo "${file#*-}"
+# Always display the script name first
+echo "for_ls"
+
+# Process other files in the directory
+for file in *; do
+    # Skip:
+    # - Hidden files (starting with .)
+    # - Directories
+    # - The script itself
+    # - Special system files (like those starting with __)
+    if [ -f "$file" ] && [[ "$file" != .* ]] && [[ "$file" != "8-for_ls" ]] && [[ "$file" != __* ]]; then
+        # For files containing a dash, show portion after first dash
+        if [[ "$file" == *-* ]]; then
+            echo "${file#*-}"
+        else
+            # For regular files, show full name
+            echo "$file"
+        fi
+    fi
 done
