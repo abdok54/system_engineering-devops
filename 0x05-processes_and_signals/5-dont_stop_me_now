@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Forceful version using kill -9
+
+pid=$(pgrep -f "4-to_infinity_and_beyond")
+if [ -n "$pid" ]; then
+    kill -9 "$pid"
+    echo "Forcefully terminated 4-to_infinity_and_beyond (PID: $pid)"
+fi
