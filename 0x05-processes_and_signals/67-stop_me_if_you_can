@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-# Kills the 7-highlander process (modified from 6-stop_me_if_you_can)
-pkill -f "7-highlander"
