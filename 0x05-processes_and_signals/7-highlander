@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-# This script runs indefinitely, printing "To infinity and beyond" every 2 seconds
-# When receiving SIGTERM, it prints "I am invincible!!!" but continues running
+# This script runs indefinitely and handles SIGTERM
 
 trap 'echo "I am invincible!!!"' SIGTERM
 
