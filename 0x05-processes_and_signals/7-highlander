@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# This script runs indefinitely, printing "To infinity and beyond" every 2 seconds
+# When receiving SIGTERM, it prints "I am invincible!!!" but continues running
+
+trap 'echo "I am invincible!!!"' SIGTERM
+
+while true; do
+    echo "To infinity and beyond"
+    sleep 2
+done
